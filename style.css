@@ -1,0 +1,317 @@
+body{
+    background: #D8D8D8;
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding:0px;
+}
+
+
+.navbar-toggler{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav .active{
+    font-weight: bold;
+    text-decoration:underline;
+  }
+
+nav{
+    padding: 15px 0 0 0 !important;
+}
+
+
+.nav-link {
+    color: #4B4B4B;
+    text-decoration: none;
+    font-size: 20px;
+    width: 220px;
+    text-align: center;
+    text-transform: uppercase;
+}
+nav-link :hover{
+    color: rgb(12, 5, 47);
+    text-decoration:underline;
+    font-weight: 500px;
+}
+h1 {
+    font-size: 50px;
+    padding-bottom: 20px;
+    color: rgb(45, 45, 45);
+    font-weight: 800;
+}
+h2{
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: 500;
+    
+    }
+
+
+
+/* --------------------------footer------------------------------------ */
+
+footer {
+    background-color: white;
+}
+footer p{
+    text-decoration: underline;
+
+}
+
+footer a{
+    color:black;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+footer i{
+    font-size: 35px;
+    border: 1px solid;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 8px 0 0 0;
+    border-radius: 80px;
+    margin: 0 15px;
+    background-color:white;
+
+}
+
+#footer-mobile{
+    position: fixed;
+    display: block;
+    bottom: 0px;
+    width:100%;
+    /* border: 1px black; */
+   
+}
+
+
+/* ------------------------------Mis Proyectos----------------------------------------- */
+
+#proyectos img{
+    
+    width: 100%;
+}
+
+#proyectos .bg-white {
+    min-height: 520px;
+    
+}
+
+/* -----------------------Formulario-------------------------------------- */
+
+.form-control{
+    background-color:#D8D8D8;
+    border: 0;
+    border-bottom: 1px solid;
+    border-radius: 0px;
+}
+
+.btn{
+    background-color: black;
+    color:white;
+    border-radius: 0px;
+
+}
+
+/* -------------------------Sobre Mi----------------------------------- */
+
+
+#about .img-circle {
+    margin: 1em auto;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    box-shadow: inset 5px 5px 10px 0px rgba(209,209,209,0.63);
+    border-radius: 100%;
+}
+
+
+
+#about .bg-white{
+    min-height: 400px;
+}
+#about h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#about .fa-code{
+    background-color: rgb(89, 89, 92);
+    color: white;
+    padding: 30px;
+    font-size: 40px;
+}
+
+#about .fa-database{
+    background-color: rgb(89, 89, 92);
+    color: white;
+    padding: 30px;
+    font-size: 40px;
+}
+
+#about .fa-language{
+    background-color: rgb(89, 89, 92);
+    color: white;
+    padding: 30px;
+    font-size: 40px;
+}
+
+#about .fa-window-restore{
+    background-color: rgb(89, 89, 92);
+    color: white;
+    padding: 30px;
+    font-size: 40px;
+}
+#about .fa-puzzle-piece{
+    background-color: rgb(89, 89, 92);
+    color: white;
+    padding: 30px;
+    font-size: 40px;
+}
+
+.reference{
+    text-decoration: underline;
+}
+
+
+#about  .fa-html5{
+    background-color: white;
+    color:  rgb(228, 122, 24); 
+    
+}
+#about  .fa-css3-alt{
+    background-color: white;
+    color:  rgb(24, 180, 228); 
+}
+#about  .fa-bootstrap{
+    background-color: white;
+    color:  rgb(51, 38, 110); 
+}
+#about  .fa-php{
+    background-color: white;
+    color:  rgb(43, 34, 88); 
+}
+
+#about  .fa-js-square{
+    color:  rgb(200, 168, 22); 
+}
+#about  .fa-react{
+    background-color: white;
+    color:  rgb(12, 240, 221); 
+}
+#about  .fa-node-js{
+    color: green;
+}
+   
+    
+#about p{
+    font-size: 25px;
+}
+
+#about .tab{
+    color: white;
+}
+
+.fa-database{
+    width: 105px;
+}
+
+/* ----------------------experiencia-------------------------- */
+
+#experiencia{
+    background-color: rgb(45, 45, 45); 
+}
+#experiencia h2{
+    color:white;
+    font-size: 45px;
+}
+#experiencia h3{
+    color: white;
+    font-size: 20px;
+}
+#experiencia h4{
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.img-responsive {
+    min-width: 75px;
+    border-radius: 25%;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------Home------------------------------ */
+
+main{
+    background: url('files/Fondos-01.png');
+
+}
+
+#home {
+    background-image: url('files/Fondos-01.png');
+    background-repeat: repeat;
+    background-size: 100%;
+    height: 81vh;
+}
+
+
+@media (max-width: 700px) {
+    h1{
+        font-size: 35px;
+    }
+
+    #contacto h2{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    h3{
+        font-size: 25px;
+    }
+    #about p{
+        font-size: 20px;
+    }
+
+    .navbar-collapse {
+        height: 100vh;
+        
+    } 
+    
+    .navbar-nav{
+        background: #1e1e1e;
+        height: 90vh !important;
+        z-index: 1000;
+        position: absolute;
+        top:60px;        
+        width: 100%;
+        color: white;
+       
+        /* margin: -15px; */
+
+        
+    }
+
+    .nav-link {
+        color:white;
+        text-align: left;
+        /* margin-top:30px; */
+        
+    }
+
+    .nav-item{
+        border-bottom: solid 1px;
+        margin-left: 40px;
+        
+    }
+}
