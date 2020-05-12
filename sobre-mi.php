@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Sobre mí</title>
 </head>
 
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <section class="conocimientos">
+            <section id="conocimientos">
                 <div class="row my-3 my-sm-4">
 
                     <div class="col-12 col-sm-6">

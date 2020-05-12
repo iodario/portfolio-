@@ -1,3 +1,70 @@
+<?php
+
+include_once ("PHPMailer/src/PHPMailer.php");
+include_once ("PHPMailer/src/SMTP.php");
+
+$msg = "";
+
+function guardarCorreo($correo){
+    $archivo = fopen("mail.txt", "a+");
+    fwrite ($archivo, $correo . ";\n\r");
+    fclose ($archivo);
+}
+
+if($_POST){ /* es postback */
+    $nombre = $_POST["txtNombre"];
+    $correo = $_POST["txtCorreo"];
+    $asunto = $_POST["txtAsunto"];
+    $mensaje = $_POST["txtMensaje"];
+
+    if($nombre != "" && $correo != ""){
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true;
+        $mail->Host = "mail.dominio.com"; // SMTP a utilizar
+        $mail->Username = "info@dominio.com.ar"; // Correo completo a utilizar
+        $mail->Password = "aqui va la clave de tu correo";
+        $mail->Port = 25;
+        $mail->From = "info@dominio.com.ar"; //Desde la cuenta donde enviamos
+        $mail->FromName = "Tu nombre a mostrar";
+        $mail->IsHTML(true);
+        $mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );
+
+        //Destinatarios
+        $mail->addAddress($correo);
+        $mail->addBCC("otrocorreo@gmail.com"); //Copia oculta
+        $mail->Subject = utf8_decode("Contacto página Web");
+        $mail->Body = "Recibimos tu consulta, te responderemos a la brevedad.";
+        if(!$mail->Send()){
+            $msg = "Error al enviar el correo, intente nuevamente mas tarde.";
+        }
+        $mail->ClearAllRecipients(); //Borra los destinatarios
+
+        //Envía ahora un correo a nosotros con los datos de la persona
+        $mail->addAddress("info@dominio.com.ar");
+        $mail->Subject = utf8_decode("Recibiste un mensaje desde tu página Web");
+        $mail->Body = "Te escribio $nombre cuyo correo es $correo, con el asunto $asunto y el siguiente mensaje:<br><br>$mensaje";
+       
+        if($mail->Send()){ /* Si fue enviado correctamente redirecciona */
+            header('Location: confirmacion-envio.php');
+        } else {
+            $msg = "Error al enviar el correo, intente nuevamente mas tarde.";
+        }    
+    } else {
+        $msg = "Complete todos los campos";
+    }
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,7 +75,7 @@
     <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Contacto</title>
 </head>
 
@@ -121,7 +188,7 @@
     <footer id="footer-mobile">
         <div class="container">
             <div class="row py-1">
-            <!-- <div class="row d-none"> -->
+                <!-- <div class="row d-none"> -->
                 <div class="col text-left d-block d-sm-block d-md-none ">
                     <a href="https://api.whatsapp.com/send?phone=542234492977&amp;text=Hola" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
